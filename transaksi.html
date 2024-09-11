@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaksi - QRIS ALL PAYMENT</title>
+    <!-- CSS style -->
+    
+<style>
+
+        /* Reset margin dan padding untuk seluruh elemen */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Gaya untuk body */
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: #dcdcdc; /* Warna latar belakang abu-abu */
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Gaya untuk kontainer */
+        .container {
+            text-align: center;
+            background-color: #ffffff; /* Warna latar belakang kontainer putih */
+            padding: 20px; /* Menambahkan padding di dalam kontainer */
+            border-radius: 15px; /* Menambahkan sudut melengkung pada kontainer */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Memberikan efek bayangan lembut pada kontainer */
+            margin: 20px; /* Menambahkan margin di sekitar kontainer */
+            max-width: 90%; /* Membatasi lebar maksimum kontainer */
+            width: 100%; /* Mengatur lebar kontainer menjadi 100% */
+            margin-bottom: 80px; /* Menambahkan margin bawah untuk memberi ruang bagi footer */
+        }
+
+        /* Gaya untuk teks di atas dan di bawah gambar */
+        .text {
+            margin: 15px 0; /* Jarak vertikal di atas dan di bawah teks */
+        }
+
+        /* Gaya untuk teks di atas gambar */
+        .top-text p {
+            font-size: 25px; /* Ukuran font untuk teks di atas gambar */
+            color: #a80303; /* Warna teks */
+            font-weight: bold; /* Menebalkan teks */
+        }
+
+        /* Gaya untuk teks di bawah gambar */
+        .bottom-text p {
+            font-size: 16px; /* Ukuran font untuk teks di bawah gambar */
+            color: #080707; /* Warna teks lebih lembut */
+            margin: 0; /* Menghilangkan margin default */
+        }
+
+        /* Gaya untuk gambar */
+        .center-image {
+            width: 100%; /* Menetapkan lebar gambar menjadi 100% dari lebar kontainer */
+            max-width: 500px; /* Menetapkan lebar maksimum gambar */
+            height: auto; /* Menjaga rasio aspek gambar */
+            border-radius: 10px; /* Memberikan sudut melengkung pada gambar */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Memberikan efek bayangan lembut pada gambar */
+            margin-top: 20px; /* Menambahkan jarak di atas gambar */
+        }
+
+        /* Gaya untuk ikon sosial media */
+        .social-icons {
+            margin-top: 20px; /* Jarak antara gambar dan ikon sosial media */
+            display: flex; /* Menggunakan flexbox untuk penataan ikon sosial media */
+            justify-content: center; /* Mengatur ikon di tengah kontainer */
+            gap: 20px; /* Jarak horizontal antara ikon */
+        }
+
+        .social-icons a {
+            display: inline-block;
+            text-decoration: none; /* Menghilangkan garis bawah dari tautan */
+        }
+
+        .social-icons img {
+            width: 40px; /* Ukuran ikon sosial media */
+            height: 40px; /* Ukuran ikon sosial media */
+            vertical-align: middle; /* Menjaga ikon sejajar dengan teks */
+            transition: transform 0.3s ease; /* Menambahkan efek transisi */
+        }
+
+        .social-icons img:hover {
+            transform: scale(1.1); /* Efek zoom pada hover */
+        }
+
+        /* Gaya untuk footer */
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #ffffff; /* Warna latar belakang footer putih */
+            color: #333;
+            font-size: 14px;
+            border-top: 1px solid #ddd; /* Garis pemisah di atas footer */
+            position: relative;
+            bottom: 0;
+            width: 100%; /* Mengatur lebar footer menjadi 100% */
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .top-text  {
+                font-size: 18px; /* Mengurangi ukuran font untuk layar kecil */
+            }
+
+            .bottom-text  {
+                font-size: 14px; /* Mengurangi ukuran font untuk layar kecil */
+            }
+            
+            .container {
+                padding: 15px; /* Mengurangi padding untuk layar kecil */
+            }
+
+            .social-icons {
+                gap: 15px; /* Mengurangi jarak horizontal antara ikon untuk layar kecil */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .top-text  {
+                font-size: 16px; /* Mengurangi ukuran font untuk layar sangat kecil */
+            }
+
+            .bottom-text  {
+                font-size: 12px; /* Mengurangi ukuran font untuk layar sangat kecil */
+            }
+            
+            .container {
+                padding: 10px; /* Mengurangi padding lebih lanjut untuk layar sangat kecil */
+            }
+
+            .social-icons {
+                gap: 10px; /* Mengurangi jarak horizontal antara ikon untuk layar sangat kecil */
+            }
+
+            .social-icons img {
+                width: 30px; /* Mengurangi ukuran ikon sosial media untuk layar sangat kecil */
+                height: 30px; /* Mengurangi ukuran ikon sosial media untuk layar sangat kecil */
+            }
+        }
+
+    .whatsapp-button {
+        background-color: #b61a1a; /* Warna hijau WhatsApp */
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+
+    .register-link {
+    margin-top: 1rem;
+    text-align: center;
+    }
+
+
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <div class="text top-text">
+            <p>QRIS ALL PAYMENT</p>
+        </div>
+        <img src="images/QRIS.png" alt="Gambar Tengah" class="center-image">
+        <div class="text bottom-text">
+            <p>Masukan jumlah sesuai harga yang kakak pesan.</p>
+            <p>lalu kirim bukti transaksi selesai pembanyaran ke whatsap kami.</p>
+        </div>
+
+        <div>
+
+            <a href="https://wa.me/6289512622649" target="_blank">
+                <button class="whatsapp-button">Kirim bukti pembanyaran</button>
+            </a>
+            
+            <div class="register-link">
+                <p>top up game murah & terpecaya hanya <a href="https://wibystore.github.io/WibyStoree/">disini</a></p>
+            </div>
+
+            <!-- Tambahkan ikon sosial media lainnya di sini jika ada -->
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2024 all store shop. aman teraman & terpecaya.
+    </footer>
+</body>
+</html>
